@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dua 23</title>
+</head>
+<body>
+  <a id="manualLink" href="#" target="_blank" style="display:none;">Open WhatsApp</a>
+  <script>
+    const message = `*By Your Mercy, Ya Kareem… grant us Jannah*
+
+This heartfelt dua calls upon Allah ﷻ by His Names Ar-Rahman (The Most Merciful) and Al-Kareem (The Most Generous), asking for easy entry into Jannatul Firdows Al A’la — the highest, most blessed level of Paradise reserved for the best believers and His Awliyah (Friends). It humbly seeks this blessing solely through His infinite mercy, without hardship in this life or the next.
+
+For verily the mercy and generosity from Allah is the only means to attain such a noble station.
+
+As Rasulullah ﷺ said:
+
+ “Whoever hopes for Paradise, then let him die with faith in Allah and the Last Day.” (Muslim)
+
+*Ya Allah (O Allah), Ya Rahman (O Most Merciful), Ya Kareem (O Most Generous), by Your infinite mercy and generosity, grant us easy entry into Jannahtul Firdows Al A’la, the highest and most blessed level of paradise, which is reserved for the best of the believers and Your Awliyah (Friends). Ya Allah, despite our shortcomings, we ask You to grant us this highest station in Jannah solely by Your boundless mercy and generosity, without the need for hardship, suffering, grief, or sadness, either in this life or the next. Let our entry be one of joy, relief, and eternal peace, where we experience the perfection of Your blessings and everlasting comfort, in the company of Your beloved Habeebullah, Sultan-ul-Anbiya, Rasulullah, Sayyidina Muhammad Sallallahu Alayhi Wasallam, along with our family and loved ones.*
+
+This dua is part of *The Supplication of Infinite Blessings* — a powerful collection of heartfelt supplications designed to benefit you in both this life and the next. 
+
+*At Dua Sharing, our mission is simple*: 
+
+To encourage sincere dua, meaningful sharing, and to multiply blessings through a growing global chain of people making dua for one another every single day.
+
+As Rasulullah ﷺ said: 
+
+“The supplication of a Muslim for his brother in his absence will certainly be answered. Every time he makes a supplication for good for his brother, the angel appointed for this task says: ‘Ameen! And may it be for you too.”
+
+Every post we share is taken directly from the full Supplication of Infinite Blessings — with the aim of moving hearts, inspiring action, and reminding us all of what truly matters.
+
+Access the full supplication in both English and Arabic at: https://www.duasharing.com
+
+When you share this post, you’re not simply sharing a dua. You’re opening the door to millions of people making sincere dua for you — with the Malaika (Angels) themselves saying “Ameen” to every single one.
+
+May Allah accept it from you, and reward you for all those it reaches through you.
+
+Ameen`;
+    const encodedText = encodeURIComponent(message);
+    const waProtocol = "whatsapp://send?text=" + encodedText;
+    const waWeb = "https://wa.me/?text=" + encodedText;
+    const manualLink = document.getElementById('manualLink');
+    manualLink.href = waWeb;
+
+    async function tryShare() {
+      try {
+        if (navigator.share) {
+          await navigator.share({ text: message });
+        } else {
+          window.location.href = waProtocol;
+          setTimeout(() => { window.location.href = waWeb; }, 1200);
+        }
+      } catch (e) {
+        window.location.href = waWeb;
+      }
+    }
+
+    window.addEventListener('load', tryShare);
+  </script>
+</body>
+</html>
